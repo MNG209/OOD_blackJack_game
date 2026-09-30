@@ -34,13 +34,25 @@ public class CardGame {
 			//public Card(String cardSuit, String cardName, int cardValue, String cardPicture) {
 			Card newCard = new Card(fields[0], fields[1].trim(),
 					Integer.parseInt(fields[2].trim()), fields[3]);
+			
 			deckOfCards.add(newCard);	
 		}
+		
+		input.close();
+		
+		//Card test1 = new Card("heart", "king", 10, "kh.gif");
+		//Card test2 = new Card("spade", "king", 10, "ks.gif");
+		//Card test3 = new Card("heart", "queen", 10, "qh.gif");
+		//Card test4 = new Card("club", "seven", 7, "7c.gif");
+
+		//System.out.println(test1.equals(test2)); // true
+		//System.out.println(test1.equals(test3)); // false
+		//System.out.println(test1.equals(test4)); // false
 
 		shuffle();
 
 		//for(Card c: deckOfCards)
-			//System.out.println(c);
+		//	System.out.println(c);
 
 		//deal the player 5 cards
 		for(int i = 0; i < 4; i++) {

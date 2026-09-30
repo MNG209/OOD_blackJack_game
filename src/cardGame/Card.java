@@ -45,7 +45,7 @@ public class Card {
 		this.cardValue = cardValue;
 	}
 	
-	public String getCardPicture() 	{
+	public String getCardPicture() {
 		return cardPicture;
 	}
 	
@@ -57,8 +57,22 @@ public class Card {
 	public String toString() {
 		return cardName + " of " + cardSuit + "s (value " + cardValue + ")";
 	}
-
 	
+	@Override
+	public boolean equals(Object obj) {
+		
+		if (this == obj) {
+			return true;
+		}
+		
+		if (!(obj instanceof Card)) {
+			return false;
+		}
+		
+		Card otherCard = (Card) obj;
+		
+		return cardName.equalsIgnoreCase(otherCard.cardName);
 	}
+}
 
 
