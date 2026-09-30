@@ -31,7 +31,6 @@ public class CardGame {
 
 		while(input.hasNext()) {
 			String[] fields  = input.nextLine().split(",");
-			//public Card(String cardSuit, String cardName, int cardValue, String cardPicture) {
 			Card newCard = new Card(fields[0], fields[1].trim(),
 					Integer.parseInt(fields[2].trim()), fields[3]);
 			
@@ -54,14 +53,25 @@ public class CardGame {
 		//for(Card c: deckOfCards)
 		//	System.out.println(c);
 
-		//deal the player 5 cards
+		//deal the player 4 cards
 		for(int i = 0; i < 4; i++) {
 			playerCards.add(deckOfCards.remove(i));
 		}
 		
 		System.out.println("players cards");
+		
 		for(Card c: playerCards)
 			System.out.println(c);
+		
+		int faceCardCount = 0;
+		
+		for(Card card : playerCards) {
+			if(card.isFaceCard()) {
+				faceCardCount++;
+			}
+		}
+		
+		System.out.println("Number of face cards: " + faceCardCount);
 
 		System.out.println("pairs is " + checkFor2Kind());
 

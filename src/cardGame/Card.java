@@ -73,6 +73,13 @@ public class Card {
 		
 		return cardName.equalsIgnoreCase(otherCard.cardName);
 	}
+	
+	public boolean isFaceCard() {
+		return cardName.equalsIgnoreCase("jack")
+				|| cardName.equalsIgnoreCase("queen")
+				|| cardName.equalsIgnoreCase("king");
+				
+	}
 }
 
 
